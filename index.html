@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наш сайт любви ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Основная страница -->
+        <section id="home" class="page active">
+            <h1>Привет, моя любовь! ❤️</h1>
+            <div class="hearts">
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-heart"></i>
+            </div>
+            <p>Этот сайт создан специально для нас двоих</p>
+            
+            <div class="menu">
+                <button onclick="showPage('gallery')">
+                    <i class="fas fa-images"></i> Наши фото
+                </button>
+                <button onclick="showPage('memories')">
+                    <i class="fas fa-book"></i> Наши истории
+                </button>
+                <button onclick="showPage('messages')">
+                    <i class="fas fa-envelope"></i> Секретные послания
+                </button>
+                <button onclick="showPage('countdown')">
+                    <i class="fas fa-calendar-alt"></i> Наши даты
+                </button>
+            </div>
+            
+            <div class="date-display">
+                <p>Сегодня: <span id="current-date"></span></p>
+                <p>Мы вместе уже: <span id="days-together"></span> дней</p>
+            </div>
+        </section>
+
+        <!-- Галерея -->
+        <section id="gallery" class="page">
+            <h2><i class="fas fa-images"></i> Наши моменты</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">📷 Фото 1</div>
+                <div class="gallery-item">📷 Фото 2</div>
+                <div class="gallery-item">📷 Фото 3</div>
+            </div>
+            <button class="back-btn" onclick="showPage('home')">Назад</button>
+        </section>
+
+        <!-- Истории -->
+        <section id="memories" class="page">
+            <h2><i class="fas fa-book"></i> Наши истории</h2>
+            <div class="memory">
+                <h3>Наше первое свидание</h3>
+                <p>Здесь опишите ваше первое свидание...</p>
+                <small>Дата: <span class="memory-date">01.01.2023</span></small>
+            </div>
+            <button class="back-btn" onclick="showPage('home')">Назад</button>
+        </section>
+
+        <!-- Секретные сообщения -->
+        <section id="messages" class="page">
+            <h2><i class="fas fa-envelope"></i> Секретные послания</h2>
+            <div class="message-box">
+                <textarea id="secret-message" placeholder="Напиши сообщение..."></textarea>
+                <button onclick="saveMessage()">Сохранить послание</button>
+            </div>
+            <div id="saved-messages"></div>
+            <button class="back-btn" onclick="showPage('home')">Назад</button>
+        </section>
+
+        <!-- Счетчик дней -->
+        <section id="countdown" class="page">
+            <h2><i class="fas fa-calendar-alt"></i> Наши важные даты</h2>
+            <div class="countdowns">
+                <div class="countdown-item">
+                    <h3>Сколько мы вместе:</h3>
+                    <div id="together-counter" class="counter"></div>
+                </div>
+                <div class="countdown-item">
+                    <h3>До твоего дня рождения:</h3>
+                    <div id="birthday-counter" class="counter"></div>
+                </div>
+            </div>
+            <button class="back-btn" onclick="showPage('home')">Назад</button>
+        </section>
+    </div>
+
+    <!-- Музыкальный плеер -->
+    <div class="music-player">
+        <button onclick="toggleMusic()">
+            <i class="fas fa-music"></i>
+            <span id="music-text">Включить нашу песню</span>
+        </button>
+        <audio id="our-song" loop>
+            <!-- Добавьте свою музыку в папку assets и укажите путь -->
+            <source src="assets/our-song.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
