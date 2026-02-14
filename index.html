@@ -11,13 +11,13 @@
     <div class="container">
         <!-- Основная страница -->
         <section id="home" class="page active">
-            <h1>Привет, моя любовь! ❤️</h1>
+            <h1>Потехехехехе</h1>
             <div class="hearts">
                 <i class="fas fa-heart"></i>
                 <i class="fas fa-heart"></i>
                 <i class="fas fa-heart"></i>
             </div>
-            <p>Этот сайт создан специально для нас двоих</p>
+            <p></p>
             
             <div class="menu">
                 <button onclick="showPage('gallery')">
@@ -91,16 +91,63 @@
     </div>
 
     <!-- Музыкальный плеер -->
-    <div class="music-player">
-        <button onclick="toggleMusic()">
-            <i class="fas fa-music"></i>
-            <span id="music-text">Включить нашу песню</span>
+<div class="music-toggle">
+    <button onclick="togglePlayer()">
+        <i class="fas fa-music"></i>
+        <span>Наша музыка</span>
+    </button>
+</div>
+
+<div class="custom-player" id="custom-player">
+    <div class="player-header">
+        <span id="track-name">Наша песня</span>
+        <button class="close-player" onclick="togglePlayer()">
+            <i class="fas fa-times"></i>
         </button>
-        <audio id="our-song" loop>
-            <!-- Добавьте свою музыку в папку assets и укажите путь -->
-            <source src="assets/our-song.mp3" type="audio/mpeg">
-        </audio>
     </div>
+
+    <div class="player-controls">
+        <button onclick="prevTrack()"><i class="fas fa-backward"></i></button>
+        <button onclick="togglePlay()" id="play-btn">
+            <i class="fas fa-play"></i>
+        </button>
+        <button onclick="nextTrack()"><i class="fas fa-forward"></i></button>
+    </div>
+
+    <audio id="audio-player"></audio>
+</div>
+<!-- Плавающее сердечко-замочек -->
+<div id="lock-heart" class="lock-heart">❤️</div>
+
+<!-- Панель калькулятора -->
+<div id="date-calculator" class="date-calculator">
+    <div id="display" class="display">дд/мм/гггг</div>
+    <div id="hint-box" class="hint-box">Подсказка: То, с чего все началось</div>
+    <div class="buttons">
+        <button onclick="pressDigit('1')">1</button>
+        <button onclick="pressDigit('2')">2</button>
+        <button onclick="pressDigit('3')">3</button>
+
+        <button onclick="pressDigit('4')">4</button>
+        <button onclick="pressDigit('5')">5</button>
+        <button onclick="pressDigit('6')">6</button>
+
+        <button onclick="pressDigit('7')">7</button>
+        <button onclick="pressDigit('8')">8</button>
+        <button onclick="pressDigit('9')">9</button>
+
+        <button onclick="toggleHint()">💡</button>
+        <button onclick="pressDigit('0')">0</button>
+        <button onclick="confirmDate()">✔️</button>
+    </div>
+</div>
+<!-- Дисплей сообщений для неправильной даты -->
+<div id="message-display" class="message-display"></div>
+
+<!-- Затемнение экрана для поздравления -->
+<div id="celebration-overlay" class="celebration-overlay">
+    <div id="celebration-text" class="celebration-text"></div>
+</div>
 
     <script src="script.js"></script>
 </body>
